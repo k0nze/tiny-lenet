@@ -1,0 +1,16 @@
+CC=arm-linux-gnueabihf-gcc
+DEBUG=-DDEBUG
+TINY_DNN=/local/luebeck/git/tiny-dnn
+CFLAGS=-I$(TINY_DNN) -lstdc++ -std=gnu++11 -O2 
+
+all: train.zynq test.zynq
+
+train.zynq: train.cpp
+	$(CC) $(DEBUG) $(CFLAGS) train.cpp -o train.zynq -lm -lpthread
+
+test.zynq: test.cpp
+	$(CC) $(DEBUG) -DDNN_USE_IMAGE_API $(CFLAGS) test.cpp -o test.zynq -lm -lpthread
+
+.PHONY clean: 
+	-rm train.zynq
+	-rm test.zynq

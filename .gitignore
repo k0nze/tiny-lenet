@@ -1,4 +1,4 @@
 *.png
-train
-test
+*.x86
+*.zynq
 LeNet-model

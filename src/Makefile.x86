@@ -2,10 +2,10 @@
 # TODO use libdnn for OpenCL GPU
 
 CC=gcc
-DEBUG=-DDEBUG
+#DEBUG=-DDEBUG
 TINY_DNN=/local/luebeck/git/tiny-dnn
 #CFLAGS=-DCNN_USE_AVX -DCNN_USE_SSE -DUSE_OPENCL -DDNN_USE_IMAGE_API -I$(TINY_DNN) -msse3 -mavx -lstdc++ -std=gnu++11 -O2 
-CFLAGS=-DCNN_USE_AVX -DCNN_USE_SSE -I$(TINY_DNN) -msse3 -mavx -lstdc++ -std=gnu++11 -O2 
+CFLAGS=-DCNN_USE_AVX -DCNN_USE_SSE -I$(TINY_DNN) -msse3 -mavx -lstdc++ -std=gnu++11 -O2
 
 all: train.x86 test.x86
 
